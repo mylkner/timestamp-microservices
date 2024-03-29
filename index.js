@@ -25,7 +25,7 @@ app.get("/api/hello", function (req, res) {
 
 app.get("/api/:date?", (req, res) => {
     const date = req.params.date;
-    const unixDate = isNaN(date) ? Date.parse(date) : date;
+    const unixDate = isNaN(date) ? Date.parse(date) : date * 1;
     const utcDate = isNaN(date)
         ? new Date(date).toUTCString()
         : new Date(date * 1).toUTCString();
